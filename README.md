@@ -12,12 +12,12 @@ An example app to demonstrate how to use a CAS server
 6. To log out, call `RubyCAS::Filter.logout(self)` to logout and be redirected to the referrer url.  If you want the user to be redirected to another url, you can pass an optional parameter like `RubyCAS::Filter.logout(self, 'http://www.myDomain.com/')`.
 7. For more documentation, see https://github.com/rubycas/rubycas-client and https://github.com/rubycas/rubycas-client-rails.
 8. In order for Single Sign Out to work, you need to change the session store to use ActiveRecord.  In addition to that, add the following code to config/application.rb:
-`# Set the url to the Ruby CAS server
-config.rubycas.cas_base_url = 'http://localhost:3001/'
-# Enable single sign out
-config.rubycas.enable_single_sign_out = true
-# In order for the CAS single sign out to work, allow_forgery_protection must be set to false (at least for the actions behind the CAS filter)
-config.allow_forgery_protection = false`
+`# Set the url to the Ruby CAS server`
+`config.rubycas.cas_base_url = 'http://localhost:3001/'`
+`# Enable single sign out`
+`config.rubycas.enable_single_sign_out = true`
+`# In order for the CAS single sign out to work, allow_forgery_protection must be set to false (at least for the actions behind the CAS filter)`
+`config.allow_forgery_protection = false`
 9. If you want the rubycas logger to use the default rails logger, add the following to config/application.rb:
-`# Instruct the client to log to the default rails logger
-config.rubycas.logger = Rails.logger`
+`# Instruct the client to log to the default rails logger`
+`config.rubycas.logger = Rails.logger`
